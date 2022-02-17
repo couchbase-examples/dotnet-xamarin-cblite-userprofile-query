@@ -23,9 +23,9 @@ namespace UserProfileDemo.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            // tag::activate[]
-            // Couchbase.Lite.Support.iOS.Activate();removed in3.0
-            // end::activate[]
+#if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+#endif
 
             RegisterServices();
 

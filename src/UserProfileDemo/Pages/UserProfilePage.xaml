@@ -10,7 +10,7 @@
     Title="Your Profile"
     BackgroundColor="White">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Command="{Binding SaveCommand}" />
+        <ToolbarItem AutomationId="btnSave" Order="Primary" Text="Save" Command="{Binding SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -18,7 +18,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid Margin="15,25,15,20" RowSpacing="20">
+        <Grid Margin="15,20,15,15" RowSpacing="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".25*" />
                 <ColumnDefinition Width=".75*" />
@@ -31,13 +31,13 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-             
+
             <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Spacing="5" Margin="0,0,0,20">
-                 <Image Source="{Binding ImageData, Converter={StaticResource byteToImageSource}}"
+                <Image Source="{Binding ImageData, Converter={StaticResource byteToImageSource}}"
                                  Aspect="AspectFit" WidthRequest="300" HeightRequest="200" HorizontalOptions="Center" />
-                 <Button Text="Upload Image" Command="{Binding SelectImageCommand}" HorizontalOptions="Center" />
+                <Button Text="Upload Image" Command="{Binding SelectImageCommand}" HorizontalOptions="Center" />
             </StackLayout>
-        
+
             <Label Grid.Row="1" Grid.Column="0" Text="Name:" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="{OnPlatform UWP=White}" TextColor="{OnPlatform UWP=Black}" />
             <Entry Grid.Row="1" Grid.Column="1" AutomationId="eFullName" Text="{Binding Name}" VerticalOptions="Center"  />
 
@@ -46,14 +46,14 @@
 
             <Label Grid.Row="3" Grid.Column="0" Text="Address:" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="{OnPlatform UWP=White}" TextColor="{OnPlatform UWP=Black}" />
             <Entry Grid.Row="3" Grid.Column="1" AutomationId="eAddress" Text="{Binding Address}" VerticalOptions="Center" />
-            
+
             <Label Grid.Row="4" Grid.Column="0" Text="University:" HorizontalOptions="End" VerticalOptions="Center" />
             <Label Grid.Row="4" Grid.Column="1" Text="{Binding University}" TextColor="Blue">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer AutomationId="btnUniversitySelect" Command="{Binding SelectUniversityCommand}" />
                 </Label.GestureRecognizers>
             </Label>
-            
+
             <Button Grid.Row="5" Grid.ColumnSpan="2" AutomationId="btnSignOut" Text="Logout" Command="{Binding LogoutCommand}" 
                     TextColor="Red" VerticalOptions="End" HorizontalOptions="Center" />
         </Grid>

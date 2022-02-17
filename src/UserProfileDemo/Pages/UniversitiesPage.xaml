@@ -9,16 +9,17 @@
     x:Class="UserProfileDemo.Pages.UniversitiesPage">
     <pages:BaseContentPage.Content>
         <StackLayout>
-            <SearchBar Placeholder="Name" Text="{Binding Name}" />
-            <SearchBar Placeholder="Country (optional)" Text="{Binding Country}" />
-            
-            <Button Text="Lookup" Command="{Binding SearchCommand}" IsEnabled="{Binding IsSearchEnabled}"
+            <SearchBar AutomationId="sbName" Placeholder="Name" Text="{Binding Name}" />
+            <SearchBar AutomationId="sbCountry" Placeholder="Country (optional)" Text="{Binding Country}" />
+
+            <Button AutomationId="btnLookup" Text="Lookup" Command="{Binding SearchCommand}" IsEnabled="{Binding IsSearchEnabled}"
                     WidthRequest="150" BackgroundColor="Red" TextColor="White" FontAttributes="Bold"
                     HorizontalOptions="CenterAndExpand" Margin="10" />
-            
+
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" />
-            
-            <controls:ListView ItemsSource="{Binding Universities}"
+
+            <controls:ListView AutomationId="lvItems"
+                               ItemsSource="{Binding Universities}"
                                ItemTappedCommand="{Binding SelectCommand}"
                                SeparatorVisibility="None" 
                                HasUnevenRows="true">
