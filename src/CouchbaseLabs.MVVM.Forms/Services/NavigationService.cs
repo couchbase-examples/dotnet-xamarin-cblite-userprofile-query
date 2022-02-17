@@ -62,7 +62,13 @@ namespace CouchbaseLabs.MVVM.Services
             {
                 if (withNavigationEnabled)
                 {
-                    Application.Current.MainPage = new NavigationPage(view);
+                    var navPage = new NavigationPage(view);
+                    if (Device.RuntimePlatform == Device.UWP)
+                    {
+                        navPage.BarBackgroundColor = Color.Black;
+                        navPage.BarTextColor = Color.White;
+                    }
+                    Application.Current.MainPage = navPage;
                 }
                 else
                 {

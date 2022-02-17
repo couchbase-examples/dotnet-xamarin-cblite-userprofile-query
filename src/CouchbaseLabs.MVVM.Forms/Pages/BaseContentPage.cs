@@ -49,6 +49,12 @@ namespace CouchbaseLabs.MVVM.Forms.Pages
         protected BaseContentPage()
         { }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Task.Run(async () => { await ViewModel.LoadAsync(true); });
+        }
+
         async void Init() => await ViewModel.InitAsync();
     }
 }
