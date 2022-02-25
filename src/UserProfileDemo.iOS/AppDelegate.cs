@@ -21,11 +21,10 @@ namespace UserProfileDemo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-
-#if ENABLE_TEST_CLOUD
+#if DEBUG
             Xamarin.Calabash.Start();
 #endif
+            global::Xamarin.Forms.Forms.Init();
 
             RegisterServices();
 
