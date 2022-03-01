@@ -9,7 +9,4 @@
     <None Remove="Couchbase.Lite.Enterprise" />
     <None Remove="Microsoft.Bcl.AsyncInterfaces" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.0-beta02" />
-  </ItemGroup>
 </Project>
