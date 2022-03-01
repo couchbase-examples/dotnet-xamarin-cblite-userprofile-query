@@ -56,6 +56,7 @@ namespace UserProfileDemo.UITests
 
             var nameValue = app.Query(c => c.Marked(TestHelper.NAMEFIELD)).FirstOrDefault().Text;
             var addressValue = app.Query(c => c.Marked(TestHelper.ADDRESSFIELD)).FirstOrDefault().Text;
+            app.Screenshot("Validate Form Values");
             Assert.AreEqual(fullName, nameValue);
             Assert.AreEqual(address, addressValue);
         }
@@ -76,13 +77,14 @@ namespace UserProfileDemo.UITests
             app.DismissKeyboard();
 
             //todo - add image selection support
-
+            app.Screenshot("Filled Out Form Before University");
             //select university
             SelectUniversity(TestData.TESTUNIVERSITYSEARCHNAME, TestData.TESTUNIVERSITYCSEARCHCOUNTRY);
 
             //wait for the university screen to leave and profile screen to return
             app.WaitForElement(c => c.Text(TestHelper.PROFILEHEADER));
 
+            app.Screenshot("Filled Out Form");
             app.Tap(c => c.Marked(TestHelper.SAVEBUTTON));
             app.DismissKeyboard();
 
@@ -92,6 +94,7 @@ namespace UserProfileDemo.UITests
 
         private void SelectUniversity(string searchName, string searchCountry)
         {
+            app.Screenshot("Select University");
             app.Tap(c => c.Text("Select University"));
             //wait for search results
             System.Threading.Tasks.Task.Delay(3000);
@@ -111,6 +114,7 @@ namespace UserProfileDemo.UITests
             //wait for search results
             System.Threading.Tasks.Task.Delay(5000);
 
+            app.Screenshot("University Listing");
             app.Tap(c => c.Text("Harvard University"));
         }
 
