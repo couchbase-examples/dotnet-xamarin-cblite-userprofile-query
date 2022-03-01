@@ -160,7 +160,7 @@ jobs:
 
     - name: Upload artifact to App Center for Testing Android
       run: | 
-          appcenter distribute release --token "${{secrets.APPCENTER_API_KEY_ANDROID}}" --app "Couchbase-Inc./UserProfile-Query-Xamarin-Android" --group "Collaborators" --file src/UserProfileDemo.Android/bin/Debug/com.couchbase.userprofiledemo-Signed.apk --silent --debug --release-notes "${{ github.event.head_commit.message }}"    
+          appcenter distribute release --token "${{secrets.APPCENTER_API_KEY_ANDROID}}" --app "Couchbase-Inc./UserProfile-Query-Xamarin-Android" --group "Collaborators" --file src/UserProfileDemo.Android/bin/Debug/com.couchbase.userprofiledemo.xamarinquery-Signed.apk --silent --debug --release-notes "${{ github.event.head_commit.message }}"    
 
     - name: Upload artifact to App Center for Testing iOS 
       run: | 
@@ -172,4 +172,4 @@ jobs:
 
     - name: Run UI Tests in App Center Android
       run: | 
-        appcenter test run uitest --token "${{secrets.APPCENTER_API_KEY_ANDROID}}" --app "Couchbase-Inc./UserProfile-Query-Xamarin-Android" --devices "Couchbase-Inc./devices" --app-path src/UserProfileDemo.Android/bin/Debug/com.couchbase.userprofiledemo-Signed.apk --test-series "Tests" --locale "en_US" --build-dir src/UserProfileDemo.UITests/bin/Debug --uitest-tools-dir src/UserProfileDemo.UITests/bin/Debug
+        appcenter test run uitest --token "${{secrets.APPCENTER_API_KEY_ANDROID}}" --app "Couchbase-Inc./UserProfile-Query-Xamarin-Android" --devices "Couchbase-Inc./devices" --app-path src/UserProfileDemo.Android/bin/Debug/com.couchbase.userprofiledemo.xamarinquery-Signed.apk --test-series "Tests" --locale "en_US" --build-dir src/UserProfileDemo.UITests/bin/Debug --uitest-tools-dir src/UserProfileDemo.UITests/bin/Debug
