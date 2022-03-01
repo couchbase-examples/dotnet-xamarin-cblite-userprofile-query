@@ -160,7 +160,7 @@ jobs:
 
     - name: Upload artifact to App Center for Testing Android
       run: | 
-          appcenter distribute release --token "${{secrets.APPCENTER_API_KEY_ANDROID}}" --app "Couchbase-Inc.//UserProfile-Query-Xamarin-Android" --group "Collaborators" --file src/UserProfileDemo.Android/bin/Debug/com.couchbase.userprofiledemo-Signed.apk --silent --debug --release-notes "${{ github.event.head_commit.message }}"    
+          appcenter distribute release --token "${{secrets.APPCENTER_API_KEY_ANDROID}}" --app "Couchbase-Inc./UserProfile-Query-Xamarin-Android" --group "Collaborators" --file src/UserProfileDemo.Android/bin/Debug/com.couchbase.userprofiledemo-Signed.apk --silent --debug --release-notes "${{ github.event.head_commit.message }}"    
 
     - name: Upload artifact to App Center for Testing iOS 
       run: | 
