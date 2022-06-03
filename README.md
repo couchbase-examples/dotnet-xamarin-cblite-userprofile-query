@@ -1,4 +1,5 @@
-# Quickstart in Couchbase Lite Query in C# with dotnet and Xamarin 
+# Quickstart in Couchbase Lite Query in C# with dotnet and Xamarin
+[![Builds](https://github.com/couchbase-examples/dotnet-xamarin-cblite-userprofile-query/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/couchbase-examples/dotnet-xamarin-cblite-userprofile-query/actions/workflows/build.yaml)
 #### Build an cross platform iOS, Android, and UWP App in Xamarin Forms with Couchbase Lite 
 
 > This repo is designed to show you an app that allows users to log in and make changes to their user profile information. User profile information is persisted as a Document in the local Couchbase Lite Database. When the user logs out and logs back in again, the profile information is loaded from the Database. This app also demostrates how you can bundle, load, and use a prebuilt instance of Couchbase Lite and introduces you to the basics of the QueryBuilder interface.
