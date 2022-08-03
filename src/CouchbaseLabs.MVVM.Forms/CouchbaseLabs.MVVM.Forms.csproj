@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
-    <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.0" />
+    <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CouchbaseLabs.MVVM\CouchbaseLabs.MVVM.csproj" />
