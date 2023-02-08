@@ -10,7 +10,7 @@
     <ProjectReference Include="..\UserProfileDemo.Core\UserProfileDemo.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.0" />
+    <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.8" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="UniversityRepository.json" />
